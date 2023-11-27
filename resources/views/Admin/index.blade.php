@@ -16,6 +16,18 @@
         </div>
     </div>
 
+    @if (session('successLogin'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    title: "Good job!",
+                    text: "{{ session('successLogin') }}",
+                    icon: "success"
+                });
+            });
+        </script>
+    @endif
+
     <div class="container">
         <h2 class="my-4">Teachers List</h2>
 
@@ -41,7 +53,7 @@
                             <td>{{ $teacher->jenis_kelamin }}</td>
                             <td>{{ $teacher->nomor_handphone }}</td>
                             <td>
-                                <a href="{{ route('teacher_edit', $teacher->id) }}" class="btn btn-warning">Edit</a>
+                                {{-- <a href="{{ route('teacher_edit', $teacher->id) }}" class="btn btn-warning">Edit</a> --}}
                                 {{-- <a href="{{ route('teacher_delete', $teacher->id) }}" class="btn btn-danger">Delete</a> --}}
                             </td>
                             {{-- Add more cells based on your Teacher model --}}

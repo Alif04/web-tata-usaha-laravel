@@ -34,6 +34,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
         #weatherWidget .currentDesc {
@@ -86,11 +87,11 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="/payhome"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="/dashboard-admin"><i class="menu-icon fa fa-laptop"></i>Dashboard</a>
                     </li>
 
                     <li class="menu-item-has-children">
-                        <a href="/payment"> <i class="menu-icon fa fa-th"></i>Payment</a>
+                        <a href="/dashboard-admin/attendances"> <i class="menu-icon fa fa-th"></i>Attendances</a>
                     </li>
 
 
@@ -106,7 +107,7 @@
             <div class="top-left">
                 <div class="navbar-header">
                     <a class="navbar-brand " href="/payhome">
-                        <h4>WIKRAMA PPDB.</h4>
+                        <h4>WEB TATA USAHA</h4>
                     </a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>

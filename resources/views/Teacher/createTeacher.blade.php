@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>Web Tata Usaha</title>
+    <title>Booking Form HTML Template</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
@@ -35,11 +35,7 @@
                     <div class="col-md-7 col-md-push-5">
                         <div class="booking-cta">
                             <h1>Register</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi facere, soluta magnam
-                                consectetur molestias itaque
-                                ad sint fugit architecto incidunt iste culpa perspiciatis possimus voluptates aliquid
-                                consequuntur cumque quasi.
-                                Perspiciatis.
+                            <p>Silahkan untuk lakukan register!
                             </p>
                         </div>
                     </div>

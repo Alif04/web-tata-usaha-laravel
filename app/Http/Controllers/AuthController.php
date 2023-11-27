@@ -31,8 +31,16 @@ class AuthController extends Controller
 
         $user = $request->only('username', 'password');
         if (Auths::attempt($user)) {
-            return redirect('/dashboard')
-                    ->withSuccess('You have Successfully loggedin');
+            $user = Auths::user(); // Mendapatkan informasi user yang sudah login
+
+            // Periksa peran user
+            if ($user->role == 'teacher') {
+                return redirect('/create-attendances')
+                    ->with('successLogin', 'You have Successfully logged in as a teacher');
+            } elseif ($user->role == 'admin') {
+                return redirect('/dashboard-admin')
+                    ->with('successLogin', 'You have Successfully logged in as an admin');
+            }
         } else {
             dd('Error');
 

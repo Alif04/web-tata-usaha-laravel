@@ -34,9 +34,9 @@ class TeacherController extends Controller
             [
                 'nip.unique' => 'NIP sudah digunakan.',
             ]);
-        $name = explode(' ', $request->name);
+        // $name = explode(' ', $request->name);
         $user = Users::create([
-            'username' => Str::lower($name), // Ubah bagian ini
+            'username' => Str::lower($request->name), // Ubah bagian ini
             'password' => Hash::make($request->nip),
             'role' => 'teacher',
         ]);
@@ -64,10 +64,13 @@ class TeacherController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function update($id){
+    public function update($id)
+    {
         $teacher = Teacher::where('id', $id)->first();
+
         return view('Teacher.editTeacher', compact('teacher'));
-    }   
+    }
+
     public function updateStore(Request $request, $id)
     {
         $request->validate([
