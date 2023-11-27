@@ -17,7 +17,7 @@ class TeacherController extends Controller
      */
     public function registerPage()
     {
-        return view('Admin.createTeacher');
+        return view('Teacher.createTeacher');
     }
 
     /**
@@ -34,9 +34,9 @@ class TeacherController extends Controller
             [
                 'nip.unique' => 'NIP sudah digunakan.',
             ]);
-
+        $name = explode(' ', $request->name);
         $user = Users::create([
-            'username' => Str::lower($request->name), // Ubah bagian ini
+            'username' => Str::lower($name), // Ubah bagian ini
             'password' => Hash::make($request->nip),
             'role' => 'teacher',
         ]);
@@ -48,7 +48,7 @@ class TeacherController extends Controller
             'nomor_handphone' => $request->nomor_handphone,
         ]);
 
-        return redirect('/login-page')->with('success', 'Successfully Register, please login with your name and password with your nip!');
+        return redirect('/login-page')->with('success', 'Successfully Register, please login with your first name and password with your nip!');
     }
 
     /**
@@ -64,6 +64,10 @@ class TeacherController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
+    public function update($id){
+        $teacher = Teacher::where('id', $id)->first();
+        return view('Teacher.editTeacher', compact('teacher'));
+    }   
     public function updateStore(Request $request, $id)
     {
         $request->validate([

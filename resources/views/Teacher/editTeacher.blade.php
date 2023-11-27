@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>Web Tata Usaha</title>
+    <title>Booking Form HTML Template</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="col-md-7 col-md-push-5">
                         <div class="booking-cta">
-                            <h1>Register</h1>
+                            <h1>Make your reservation</h1>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi facere, soluta magnam
                                 consectetur molestias itaque
                                 ad sint fugit architecto incidunt iste culpa perspiciatis possimus voluptates aliquid
@@ -45,28 +45,28 @@
                     </div>
                     <div class="col-md-5 col-md-pull-7">
                         <div class="booking-form">
-                            <form action="/create-teacher-post" method="POST">
+                            <form action="{{ route('teacher_update') }}" method="PATCH">
                                 @csrf
                                 <div class="form-group">
                                     <span class="form-label">Name</span>
                                     <input class="form-control" name="name" type="text"
-                                        placeholder="Enter a destination or hotel name">
+                                        placeholder="Enter a destination or hotel name" value="{{ old('name', $teacher->name) }}">
                                     <span class="form-label">NIP </span>
                                     <input class="form-control" name="nip" type="text"
-                                        placeholder="Enter a destination or hotel name">
+                                        placeholder="Enter a destination or hotel name" value="{{ old('nip', $teacher->nip) }}">
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <span class="form-label">Nomor HandPhone</span>
                                             <input class="form-control" name="nomor_handphone" type="text"
-                                                placeholder="08XXXXX" required>
+                                                placeholder="08XXXXX" value="{{ old('nomor_handphone', $teacher->nomor_handphone) }}" required >
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <span class="form-label">Jenis Kelamin</span>
-                                            <select class="form-control" name="jenis_kelamin" required>
+                                            <select class="form-control" name="jenis_kelamin" required value="{{ old('jenis_kelamin', $teacher->jenis_kelamin) }}">
                                                 <option value="laki-laki">Laki-laki</option>
                                                 <option value="perempuan">Perempuan</option>
                                             </select>
@@ -74,7 +74,7 @@
                                     </div>
                                 </div>
                                 <div class="btn">
-                                    <button class="submit-btn">Register</button>
+                                    <button class="submit-btn">Update</button>
                                 </div>
                             </form>
                         </div>

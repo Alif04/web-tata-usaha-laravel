@@ -28,6 +28,7 @@
                         <th>NIP</th>
                         <th>Jenis Kelamin</th>
                         <th>Nomor Handphone</th>
+                        <th>Action</th>
                         {{-- Add more columns based on your Teacher model --}}
                     </tr>
                 </thead>
@@ -39,6 +40,10 @@
                             <td>{{ $teacher->nip }}</td>
                             <td>{{ $teacher->jenis_kelamin }}</td>
                             <td>{{ $teacher->nomor_handphone }}</td>
+                            <td>
+                                <a href="{{ route('teacher_edit', $teacher->id) }}" class="btn btn-warning">Edit</a>
+                                {{-- <a href="{{ route('teacher_delete', $teacher->id) }}" class="btn btn-danger">Delete</a> --}}
+                            </td>
                             {{-- Add more cells based on your Teacher model --}}
                         </tr>
                     @endforeach

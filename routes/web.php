@@ -24,6 +24,8 @@ Route::get('/dashboard', [AttendancesController::class, 'index']);
 Route::get('/login-page', [AuthController::class, 'loginPage']);
 Route::post('/login-store', [AuthController::class, 'loginStore']);
 Route::get('/create-teacher-page', [TeacherController::class, 'registerPage']);
+Route::get('/teacher/edit/{id}', [TeacherController::class, 'update'])->name('teacher_edit');
+Route::patch('/teacher/update/{id}', [TeacherController::class, 'updateInput'])->name('teacher_update');
 Route::post('/create-teacher-post', [TeacherController::class, 'registerAuth']);
 Route::get('/create-attendances', [AttendancesController::class, 'createPage']);
 Route::post('/create-attendances-store', [AttendancesController::class, 'createStore']);
